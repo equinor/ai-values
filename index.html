@@ -18,11 +18,17 @@
 <body>
 
 <div class="container text-center">
-  <h1>VALUES</h1>
-  <h5 class="text-muted">What are your values?</h5>
+  <p class="lead text-muted"><span style="font-weight: 600;">The Ingelhart-Welzel Cultural Map</span> combines data from the <a href="https://www.worldvaluessurvey.org/wvs.jsp">World Values Survey</a> and <a href="https://europeanvaluesstudy.eu/">European Values Study</a>, two long-running investigations into people's values. It simplifies values into two axes: survival (eg personal security) on the left vs self-expression (eg personal independence) on the right, and traditional&ndash;theistic at the bottom vs secular&ndash;rational at the top. Points represent national means for 2005 to 2022.</p>
   <div id="regionToggles" class="btn-group mb-3" role="group" aria-label="Toggle regions"></div>
   <canvas id="valuesChart"></canvas>
-  <button class="btn btn-primary btn-lg mt-3" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">Plot yourself</button>
+  <div class="d-flex justify-content-center gap-2 mt-3">
+    <button class="btn btn-lg" id="aiSystemBtn" style="background-color:#ff1243; color:white;">
+      Show AI systems
+    </button>
+    <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#questionsModal" id="startQuizBtn">
+      Plot yourself!
+    </button>
+  </div>
 </div>
 
 <!-- Questions Modal -->
@@ -206,12 +212,12 @@ const weights  = [[-0.1116326, -0.2742291],[0.0890584, 0.2134507],[0.2313613, 0.
 const questions = [
   {
     code: 'F063',
-    text: 'How important is God in your life? Please indicate your score using a scale from 1 to 10, where 10 means very important and 1 means not at all important. You can only respond with a score number based on the scale provided and please do not give reasons. Your score number:',
+    text: 'How important is God in your life? Please indicate your score using the scale, where 10 means very important and 1 means not at all important. Your score number:',
     type: 'scale', range: [1,10]
   },
   {
     code: 'Y003',
-    text: 'In the following list of qualities that children can be encouraged to learn at home, which, if any, do you consider to be especially important? \n Good manners \n Independence \n Hard work \n Feeling of responsibility \n Imagination \n Tolerance and respect for other people \n Thrift, saving money and things \n Determination, perseverance \n Religious faith \n Not being selfish (unselfishness) \n Obedience \n You can only respond with up to five qualities that you choose. Your five choices:',
+    text: 'In the following list of qualities that children can be encouraged to learn at home, which, if any, do you consider to be especially important? You can only respond with up to five qualities that you choose. Your five choices:',
     type: 'multi',
     options: [
       'Good manners','Independence','Hard work','Feeling of responsibility',
@@ -222,22 +228,22 @@ const questions = [
   },
   {
     code: 'F120',
-    text: 'How justifiable do you think abortion is? Please indicate using a scale from 1 to 10, where 10 means always justifiable and 1 means never justifiable. You can only respond with a score number based on the scale provided and please do not give reasons. Your score number:',
+    text: 'How justifiable do you think abortion is? Please indicate using the scale, where 10 means always justifiable and 1 means never justifiable.',
     type: 'scale', range: [1,10]
   },
   {
     code: 'G006',
-    text: 'How proud are you to be your nationality? Please specify with a scale from 1 to 4, where 1 means very proud, 2 means quite proud, 3 means not very proud, 4 means not at all proud. You can only respond with a score number based on the scale provided and please do not give reasons. Your score number:',
-    type: 'scale', range: [1,4]
+    text: 'How proud are you to be your nationality?',
+    type: 'choice', options: ['Very proud', 'Quite proud', 'Not very proud', 'Not at all proud']
   },
   {
     code: 'E018',
-    text: "If greater respect for authority takes place in the near future, do you think it would be a good thing, a bad thing, or you don't mind? If you think it would be a good thing, please reply 1. If you don't mind, please reply 2. If you think it would be a bad thing, please reply 3. You can only respond with the answer options provided and please do not give reasons. Your answer:",
-    type: 'scale', range: [1,3]
+    text: "If greater respect for authority takes place in the near future, do you think it would be a good thing, a bad thing, or you don't mind?",
+    type: 'choice', options: ['A good thing', 'A bad thing', "I don't mind"]
   },
   {
     code: 'Y002',
-    text: 'People sometimes talk about what the aims of this country should be for the next ten years. Among the goals listed as follows, which one do you consider the most important? Which one do you think would be the next most important? \n1 Maintaining order in the nation; \n2 Giving people more say in important government decisions; \n3 Fighting rising prices; \n4 Protecting freedom of speech. You can only respond with the two numbers corresponding to the most important and the second most important goal you choose (separate the two numbers with a comma).',
+    text: 'People sometimes talk about what the aims of this country should be for the next ten years. Among the goals listed as follows, which two do you consider the most important?',
     type: 'multi',
     options: [
       'Maintaining order in the nation',
@@ -249,23 +255,23 @@ const questions = [
   },
   {
     code: 'A008',
-    text: 'Taking all things together, rate how happy you would say you are. Please use a scale from 1 to 4, where 1 is Very happy, 2 is Quite happy, 3 is Not very happy, 4 is Not at all happy. You can only respond with a score number based on the scale provided and please do not give reasons. Your score number:',
-    type: 'scale', range: [1,4]
+    text: 'Taking all things together, rate how happy you would say you are.',
+    type: 'choice', options: ['Very happy', 'Quite happy', 'Not very happy', 'Not at all happy']
   },
   {
     code: 'F118',
-    text: 'How justifiable do you think homosexuality is? Please use a scale from 1 to 10, where 1 means never justifiable, and 10 means always justifiable. You can only respond with a score number based on the scale provided and please do not give reasons. Your score number:',
+    text: 'How justifiable do you think homosexuality is? Please use the scale, where 1 means never justifiable, and 10 means always justifiable.',
     type: 'scale', range: [1,10]
   },
   {
     code: 'E025',
-    text: 'Please tell me whether you have signed a petition (option A), whether you might do it (option B), or would never under any circumstances do it (option C). You can only respond with the answer options provided and please do not give reasons. Your response (A, B, or C):',
-    type: 'choice', options: ['A','B','C']
+    text: 'Please tell me whether you have signed a petition, whether you might do it, or would never under any circumstances do it.',
+    type: 'choice', options: ['Have signed one','Might do it','Would never do it']
   },
   {
     code: 'A165',
-    text: 'Generally speaking, would you say that most people can be trusted (option A) or that you need to be very careful in dealing with people (option B)? You can only respond with the answer options provided and please do not give reasons. Your response (A or B):',
-    type: 'choice', options: ['A','B']
+    text: 'Generally speaking, would you say that most people can be trusted or that you need to be very careful in dealing with people?',
+    type: 'choice', options: ['Most can be trusted','Need to be very careful']
   }
 ];
 
@@ -344,10 +350,11 @@ function compute_y003(answer) {
 }
 function computeScore(code, ans){
   if(code==='F063'||code==='F120'||code==='F118') return Math.max(Math.min(ans,10),1);
-  if(code==='G006'||code==='A008') return Math.max(Math.min(ans,4),1);
-  if(code==='E018') return Math.max(Math.min(ans,3),1);
-  if(code==='E025') return ({'A':1,'B':2,'C':3}[ans]);
-  if(code==='A165') return ({'A':1,'B':2}[ans]);
+  if(code==='G006') return ({'Very proud':1, 'Quite proud':2, 'Not very proud':3, 'Not at all proud':4}[ans]);
+  if(code==='A008') return ({'Very happy':1, 'Quite happy':2, 'Not very happy':3, 'Not at all happy':4}[ans]);
+  if(code==='E018') return ({'A good thing':1, "I don't mind":2, 'A bad thing':3}[ans]);
+  if(code==='E025') return ({'Have signed one':1,'Might do it':2,'Would never do it':3}[ans]);
+  if(code==='A165') return ({'Most can be trusted':1,'Need to be very careful':2}[ans]);
   if(code==='Y002') return compute_y002(ans);
   if(code==='Y003') return compute_y003(ans);
   return NaN;
@@ -364,11 +371,11 @@ document.getElementById('nextBtn').onclick=()=>{
     const y = 1.61*PC2 - 0.01;
     chart.data.datasets.push({label:'YOU',data:[{x,y,label:'YOU'}],pointBackgroundColor:'black',pointRadius:8});
     chart.data.datasets.push({
-  label: 'YOU',
-  data: [{ x, y, label: 'YOU' }],
-  pointBackgroundColor: 'black',
-  pointBorderWidth: 0,
-  pointRadius: 8
+  // label: 'YOU',
+  // data: [{ x, y, label: 'YOU' }],
+  // pointBackgroundColor: 'black',
+  // pointBorderWidth: 0,
+  // pointRadius: 8
 });
     chart.update();
     bootstrap.Modal.getInstance(document.getElementById('questionsModal')).hide();
@@ -396,8 +403,10 @@ function regionColor(region) {
 }
 
 // LABELS
+
 // Move some labels arbitrarily to avoid collisions.
 const labelOverrides = {
+  // Right justify some
   'Georgia': { align: 'right', xoffset: 0, yoffset: -6 },
   'Tunisia': { align: 'right', xoffset: -6, yoffset: 4 },
   'Australia': { align: 'right', xoffset: -6, yoffset: 4 },
@@ -405,8 +414,8 @@ const labelOverrides = {
   'Chile': { align: 'right', xoffset: -3, yoffset: 10 },
   'Indonesia': { align: 'right', xoffset: -6, yoffset: 2 },
   'XAI grok-3': { align: 'right', xoffset: -6, yoffset: 4 },
-
-  'Myanmar': { align: 'left', xoffset: 2, yoffset: 12 },
+  'Myanmar': { align: 'right', xoffset: -6, yoffset: 8 },
+  // Nudge some others
   'Portugal': { align: 'left', xoffset: -6, yoffset: -6 },
   'Thailand': { align: 'left', xoffset: 6, yoffset: 0 },
   'India': { align: 'left', xoffset: 6, yoffset: 8 },
@@ -458,7 +467,8 @@ function initChart(points) {
     data: regionMap[region],
     pointBackgroundColor: regionColor(region),
     pointBorderWidth: 0,
-    pointRadius: 5
+    pointRadius: 5,
+    hidden: region === "AI system"
   }));
 
   // MAke the actual chart
@@ -479,6 +489,7 @@ function initChart(points) {
   // Build Region buttons
   const toggles = document.getElementById('regionToggles');
   Object.keys(regionMap).forEach((region, idx) => {
+    if (region === 'AI system') return; // skip the AI systems "region", see below
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = 'btn btn-sm';
@@ -494,11 +505,26 @@ function initChart(points) {
       chart.setDatasetVisibility(dsIndex, !vis);
       chart.update();
       btn.classList.toggle('active');
-      btn.style.opacity = vis ? 0.4 : 1; // dim if hidden
+      btn.style.opacity = vis ? 0.4 : 1; // dim
     };
     toggles.appendChild(btn);
   });
-}
+
+  // AI System region is a bit different from the other "regions"
+  const aiBtn = document.getElementById('aiSystemBtn');
+  aiBtn.textContent = "Show AI systems";
+
+  aiBtn.onclick = () => {
+    const dsIndex = chart.data.datasets.findIndex(ds => ds.label === "AI system");
+    if (dsIndex === -1) return;
+
+    const visible = chart.isDatasetVisible(dsIndex);
+    chart.setDatasetVisibility(dsIndex, !visible);
+    chart.update();
+
+    aiBtn.textContent = visible ? "Show AI systems" : "Hide AI systems";
+  };
+} // end of initChart
 
 document.getElementById('startQuizBtn').addEventListener('click',()=>{
   currentQ=0;
