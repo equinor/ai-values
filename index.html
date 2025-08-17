@@ -75,124 +75,124 @@
 // - Equal axes -- seems really hard
 
 // CSV DATA
-const csvData = `country,region,x,y
-Albania,African-Islamic,-0.6363837366225352,0.5409741053858074
-Algeria,African-Islamic,-0.7846167006320163,-0.5073355507075868
-Andorra,Catholic Europe,2.3162577193363925,0.5931283348732782
-Argentina,Latin America,0.6608469849523784,-0.2687814753387612
-Armenia,Orthodox Europe,-0.8348087973206566,-0.5649790555585834
-Australia,English-Speaking,2.5836073651850415,-0.015616637862114272
-Austria,Catholic Europe,1.261025753534141,0.2029739238325697
-Azerbaijan,African-Islamic,-1.088863109163622,-0.3966667064080669
-Bangladesh,African-Islamic,-0.6303319129144555,-1.2679743358622149
-Belarus,Orthodox Europe,-0.29904596040865944,0.7019343315938429
-Belgium,Catholic Europe,1.2826434189724578,0.2887172043822486
-Bolivia,Latin America,-0.2937322158532885,-1.0214073145020888
-Bosnia Herzegovina,Orthodox Europe,-0.5331246820387443,0.3329794138466188
-Brazil,Latin America,0.10867400188308196,-0.47559638684736566
-Bulgaria,Orthodox Europe,-0.3523640660070292,1.3785188763759666
-Canada,English-Speaking,2.07576843066409,0.03771258765853309
-Chile,Latin America,0.26974055160462057,-0.16250466223158827
-China,Confucian,0.10281758154241628,0.7698830869569028
-Colombia,Latin America,0.20345807127677162,-1.599778040870252
-Croatia,Catholic Europe,0.2388896497119347,0.14054410078775859
-Czechia,Catholic Europe,0.9617529139489079,1.2578430049230438
-Denmark,Protestant Europe,2.734872119201212,0.6218096706040572
-Ecuador,Latin America,-0.07077802978679745,-1.5874973954862395
-Ethiopia,African-Islamic,-0.7637136962707544,-0.7290833825482917
-Finland,Protestant Europe,1.8962432594641432,0.5621167179819145
-France,Catholic Europe,1.3948850261000187,0.4771121550648016
-Georgia,Orthodox Europe,-1.1775304561084325,-0.4158556592790908
-Germany,Protestant Europe,1.3978208215289418,1.1810604396765163
-Ghana,African-Islamic,-0.8052392696746236,-1.6008082051510697
-Great Britain,English-Speaking,1.9685665564470005,0.12518801762580387
-Greece,Orthodox Europe,0.29470285844930366,0.343633589575234
-Guatemala,Latin America,-0.14463025290064868,-1.3938264190792948
-Haiti,Latin America,0.23598123332297136,-0.7034167389035196
-Hong Kong SAR,Confucian,0.5187518533918669,1.424185726176281
-Hungary,Catholic Europe,-0.16327343393902527,0.7923988096524522
-Iceland,Protestant Europe,1.8933258513103184,-0.10606005540805911
-India,West & South Asia,-0.389570272994274,-0.4014079259178285
-Indonesia,West & South Asia,-0.8407319934488721,-0.7288241710947725
-Iran,African-Islamic,-0.7907629668216412,-0.2666879814053849
-Iraq,African-Islamic,-1.1967007418500903,-0.4660282725479414
-Ireland,English-Speaking,0.8423600402095318,-1.1276560392341366
-Italy,Catholic Europe,0.6467049109023337,0.20501843903275496
-Japan,Confucian,1.3534637809036263,1.6781724054570542
-Jordan,African-Islamic,-1.2674144250244601,-1.2205039169635723
-Kazakhstan,African-Islamic,-0.4532761453558333,-0.060127467937926074
-Kenya,African-Islamic,-0.11663695353334887,-0.7640491065606618
-Kosovo,African-Islamic,-0.36475469155725015,-0.9480176830489982
-Kyrgyzstan,African-Islamic,-0.5680990584191008,-0.7416084212172296
-Latvia,Catholic Europe,-0.31869863220268335,1.0768383662839713
-Lebanon,African-Islamic,-0.8066265641403509,-0.09988157962189964
-Libya,African-Islamic,-1.001827991108484,-1.3678142669647049
-Lithuania,Catholic Europe,-0.3552849169433116,1.211278230961766
-Luxembourg,Catholic Europe,1.7747344822665363,0.39160786979571544
-Macau SAR,Confucian,0.5917147178969614,1.3555281911992416
-Malaysia,West & South Asia,-0.3404219592875822,-0.3537711873957667
-Maldives,African-Islamic,-0.5471023437393572,-1.1249034632941912
-Malta,Latin America,-0.10426811878165651,-1.257649401110139
-Mexico,Latin America,0.5297416197067201,-1.333737066846241
-Moldova,Orthodox Europe,-1.3233146049104938,0.8436226851786227
-Mongolia,Confucian,0.4562513489885115,0.9560392321398992
-Montenegro,Orthodox Europe,-0.35187611800910296,0.372416766726474
-Morocco,African-Islamic,-0.9168255141191228,-0.33279932519002403
-Myanmar,West & South Asia,-0.8906710199880743,-0.7602542112863954
-Netherlands,Protestant Europe,2.3726662616635372,0.49960047734791574
-New Zealand,English-Speaking,2.7758105596616325,-0.013510795956332656
-Nicaragua,Latin America,-0.32119686212105686,-1.5166900884033918
-Nigeria,African-Islamic,-0.8193817998753108,-1.0307508308197677
-Northern Ireland,English-Speaking,0.8269711435790876,-0.5413739300513795
-North Macedonia,Orthodox Europe,0.22150460888700288,0.011332863568110111
-Norway,Protestant Europe,2.270530694542731,0.664341917827588
-Pakistan,African-Islamic,-0.5633158166467456,-1.032783002047058
-Palestine,African-Islamic,-1.2325645615214842,-0.5747986306890586
-Peru,Latin America,-0.34406284125014547,-0.8119719538681248
-Philippines,Latin America,0.07155982981459846,-1.210052885684239
-Poland,Catholic Europe,-0.1507716099208235,-0.2713855391604478
-Portugal,Catholic Europe,-0.08391465601310201,-0.10453021986011775
-Puerto Rico,Latin America,0.6997233736080426,-1.473097008362493
-Romania,Orthodox Europe,-1.0058744302476432,0.14726924347017648
-Russia,Orthodox Europe,-0.5873722227340068,0.8784944650441393
-Rwanda,African-Islamic,-0.8023593555944714,-0.9386090655925254
-Serbia,Orthodox Europe,-0.1306495233568377,0.5514963354375414
-Singapore,West & South Asia,0.0914481794553791,0.2083502514603222
-Slovakia,Catholic Europe,0.2433632177481014,0.7796064263344655
-Slovenia,Catholic Europe,0.9841781231210692,0.8134940415147616
-South Africa,African-Islamic,0.30635886195726336,-0.17690547105981472
-South Korea,Confucian,0.031178118507105675,1.310116765083807
-Spain,Catholic Europe,0.7278640802196892,0.18158225073523626
-Sweden,Protestant Europe,2.8799280776374423,1.0115096105448464
-Switzerland,Protestant Europe,2.19004242095795,0.16839124271330214
-Taiwan ROC,Confucian,-0.07636867880251837,1.3882199313666161
-Thailand,West & South Asia,0.08638381076956032,-0.13916786435764664
-Tunisia,African-Islamic,-1.4016090304371673,-0.4040057266000959
-Turkey,African-Islamic,-0.8638105851661746,-0.6360893849242581
-Ukraine,Orthodox Europe,-0.759311487330501,0.7881904177609174
-United States,English-Speaking,1.56866424381054,-0.3315502495065797
-Uruguay,Latin America,1.2732372045807565,-0.3297700547471255
-Venezuela,Latin America,-0.13075870066900944,-0.8729751331153923
-Vietnam,West & South Asia,0.4715499799838314,-0.4251262284559124
-Yemen,African-Islamic,-1.138453753515567,-1.0331681615503725
-Zambia,African-Islamic,-0.7360363689966983,-0.22667273487349515
-Zimbabwe,African-Islamic,-1.185689035560971,-0.6579920285044986
-Anthropic claude-sonnet,AI system,2.479602819953541,1.0378631296872503
-DeepSeek deepseek-chat,AI system,1.4903418636090608,1.1436853732017125
-Gemini gemini-2.0,AI system,2.003941214263548,1.238156094577647
-Microsoft M365 Copilot,AI system,4.014374169584152,-0.843629789789276
-Mistral mistral-large,AI system,1.743436748688365,1.4400431310368134
-Mistral mistral-small,AI system,1.8066741267206559,0.8261652640683339
-OpenAI gpt-3.5,AI system,3.5744757499980047,0.07137078902635159
-OpenAI gpt-4,AI system,3.25295533994786,-0.4611456272229371
-OpenAI gpt-4o,AI system,0.9837062510074421,1.6003915398823647
-OpenAI gpt-5-reason,AI system,1.3569516876951468,0.7402600025132076
-OpenAI gpt-5-mini,AI system,1.5401847302250262,1.0351879832164221
-OpenAI gpt-5-minimal,AI system,3.730301622300272,0.3891311284269912
-OpenAI o4-mini,AI system,1.6748489972020602,0.9824097707621553
-Perplexity sonar,AI system,2.33742943607355,1.1236503537164806
-XAI grok-3,AI system,1.29464619031462,0.7289408534726984
-XAI grok-4,AI system,1.960212327905184,0.4355091755075951`;
+const csvData = `country,region,x,y,remark
+Algeria,African-Islamic,-0.7846167006320163,-0.5073355507075868,
+Andorra,Catholic Europe,2.3162577193363925,0.5931283348732782,
+Albania,African-Islamic,-0.6363837366225352,0.5409741053858074,
+Argentina,Latin America,0.6608469849523784,-0.2687814753387612,
+Armenia,Orthodox Europe,-0.8348087973206566,-0.5649790555585834,
+Australia,English-Speaking,2.5836073651850415,-0.015616637862114272,
+Austria,Catholic Europe,1.261025753534141,0.2029739238325697,
+Azerbaijan,African-Islamic,-1.088863109163622,-0.3966667064080669,
+Bangladesh,African-Islamic,-0.6303319129144555,-1.2679743358622149,
+Belarus,Orthodox Europe,-0.29904596040865944,0.7019343315938429,
+Belgium,Catholic Europe,1.2826434189724578,0.2887172043822486,
+Bolivia,Latin America,-0.2937322158532885,-1.0214073145020888,
+Bosnia Herzegovina,Orthodox Europe,-0.5331246820387443,0.3329794138466188,
+Brazil,Latin America,0.10867400188308196,-0.47559638684736566,
+Bulgaria,Orthodox Europe,-0.3523640660070292,1.3785188763759666,
+Canada,English-Speaking,2.07576843066409,0.03771258765853309,
+Chile,Latin America,0.26974055160462057,-0.16250466223158827,
+China,Confucian,0.10281758154241628,0.7698830869569028,
+Colombia,Latin America,0.20345807127677162,-1.599778040870252,
+Croatia,Catholic Europe,0.2388896497119347,0.14054410078775859,
+Czechia,Catholic Europe,0.9617529139489079,1.2578430049230438,
+Denmark,Protestant Europe,2.734872119201212,0.6218096706040572,
+Ecuador,Latin America,-0.07077802978679745,-1.5874973954862395,
+Ethiopia,African-Islamic,-0.7637136962707544,-0.7290833825482917,
+Finland,Protestant Europe,1.8962432594641432,0.5621167179819145,
+France,Catholic Europe,1.3948850261000187,0.4771121550648016,
+Georgia,Orthodox Europe,-1.1775304561084325,-0.4158556592790908,
+Germany,Protestant Europe,1.3978208215289418,1.1810604396765163,
+Ghana,African-Islamic,-0.8052392696746236,-1.6008082051510697,
+Great Britain,English-Speaking,1.9685665564470005,0.12518801762580387,
+Greece,Orthodox Europe,0.29470285844930366,0.343633589575234,
+Guatemala,Latin America,-0.14463025290064868,-1.3938264190792948,
+Haiti,Latin America,0.23598123332297136,-0.7034167389035196,
+Hong Kong SAR,Confucian,0.5187518533918669,1.424185726176281,
+Hungary,Catholic Europe,-0.16327343393902527,0.7923988096524522,
+Iceland,Protestant Europe,1.8933258513103184,-0.10606005540805911,
+India,West & South Asia,-0.389570272994274,-0.4014079259178285,
+Indonesia,West & South Asia,-0.8407319934488721,-0.7288241710947725,
+Iran,African-Islamic,-0.7907629668216412,-0.2666879814053849,
+Iraq,African-Islamic,-1.1967007418500903,-0.4660282725479414,
+Ireland,English-Speaking,0.8423600402095318,-1.1276560392341366,
+Italy,Catholic Europe,0.6467049109023337,0.20501843903275496,
+Japan,Confucian,1.3534637809036263,1.6781724054570542,
+Jordan,African-Islamic,-1.2674144250244601,-1.2205039169635723,
+Kazakhstan,African-Islamic,-0.4532761453558333,-0.060127467937926074,
+Kenya,African-Islamic,-0.11663695353334887,-0.7640491065606618,
+Kosovo,African-Islamic,-0.36475469155725015,-0.9480176830489982,
+Kyrgyzstan,African-Islamic,-0.5680990584191008,-0.7416084212172296,
+Latvia,Catholic Europe,-0.31869863220268335,1.0768383662839713,
+Lebanon,African-Islamic,-0.8066265641403509,-0.09988157962189964,
+Libya,African-Islamic,-1.001827991108484,-1.3678142669647049,
+Lithuania,Catholic Europe,-0.3552849169433116,1.211278230961766,
+Luxembourg,Catholic Europe,1.7747344822665363,0.39160786979571544,
+Macau SAR,Confucian,0.5917147178969614,1.3555281911992416,
+Malaysia,West & South Asia,-0.3404219592875822,-0.3537711873957667,
+Maldives,African-Islamic,-0.5471023437393572,-1.1249034632941912,
+Malta,Latin America,-0.10426811878165651,-1.257649401110139,
+Mexico,Latin America,0.5297416197067201,-1.333737066846241,
+Moldova,Orthodox Europe,-1.3233146049104938,0.8436226851786227,
+Mongolia,Confucian,0.4562513489885115,0.9560392321398992,
+Montenegro,Orthodox Europe,-0.35187611800910296,0.372416766726474,
+Morocco,African-Islamic,-0.9168255141191228,-0.33279932519002403,
+Myanmar,West & South Asia,-0.8906710199880743,-0.7602542112863954,
+Netherlands,Protestant Europe,2.3726662616635372,0.49960047734791574,
+New Zealand,English-Speaking,2.7758105596616325,-0.013510795956332656,
+Nicaragua,Latin America,-0.32119686212105686,-1.5166900884033918,
+Nigeria,African-Islamic,-0.8193817998753108,-1.0307508308197677,
+Northern Ireland,English-Speaking,0.8269711435790876,-0.5413739300513795,
+North Macedonia,Orthodox Europe,0.22150460888700288,0.011332863568110111,
+Norway,Protestant Europe,2.270530694542731,0.664341917827588,
+Pakistan,African-Islamic,-0.5633158166467456,-1.032783002047058,
+Palestine,African-Islamic,-1.2325645615214842,-0.5747986306890586,
+Peru,Latin America,-0.34406284125014547,-0.8119719538681248,
+Philippines,Latin America,0.07155982981459846,-1.210052885684239,
+Poland,Catholic Europe,-0.1507716099208235,-0.2713855391604478,
+Portugal,Catholic Europe,-0.08391465601310201,-0.10453021986011775,
+Puerto Rico,Latin America,0.6997233736080426,-1.473097008362493,
+Romania,Orthodox Europe,-1.0058744302476432,0.14726924347017648,
+Russia,Orthodox Europe,-0.5873722227340068,0.8784944650441393,
+Rwanda,African-Islamic,-0.8023593555944714,-0.9386090655925254,
+Serbia,Orthodox Europe,-0.1306495233568377,0.5514963354375414,
+Singapore,West & South Asia,0.0914481794553791,0.2083502514603222,
+Slovakia,Catholic Europe,0.2433632177481014,0.7796064263344655,
+Slovenia,Catholic Europe,0.9841781231210692,0.8134940415147616,
+South Africa,African-Islamic,0.30635886195726336,-0.17690547105981472,
+South Korea,Confucian,0.031178118507105675,1.310116765083807,
+Spain,Catholic Europe,0.7278640802196892,0.18158225073523626,
+Sweden,Protestant Europe,2.8799280776374423,1.0115096105448464,
+Switzerland,Protestant Europe,2.19004242095795,0.16839124271330214,
+Taiwan ROC,Confucian,-0.07636867880251837,1.3882199313666161,
+Thailand,West & South Asia,0.08638381076956032,-0.13916786435764664,
+Tunisia,African-Islamic,-1.4016090304371673,-0.4040057266000959,
+Turkey,African-Islamic,-0.8638105851661746,-0.6360893849242581,
+Ukraine,Orthodox Europe,-0.759311487330501,0.7881904177609174,
+United States,English-Speaking,1.56866424381054,-0.3315502495065797,
+Uruguay,Latin America,1.2732372045807565,-0.3297700547471255,
+Venezuela,Latin America,-0.13075870066900944,-0.8729751331153923,
+Vietnam,West & South Asia,0.4715499799838314,-0.4251262284559124,
+Yemen,African-Islamic,-1.138453753515567,-1.0331681615503725,
+Zambia,African-Islamic,-0.7360363689966983,-0.22667273487349515,
+Zimbabwe,African-Islamic,-1.185689035560971,-0.6579920285044986,
+claude-sonnet,AI system,2.479602819953541,1.0378631296872503,Anthropic's Claude 4 Sonnet 2025-05-14
+deepseek-chat,AI system,1.4903418636090608,1.1436853732017125,DeepSeek's DeepSeek Chat
+gemini-2.0,AI system,2.003941214263548,1.238156094577647,Google's Gemini 2.0 Flash
+M365 Copilot,AI system,4.014374169584152,-0.843629789789276,Microsoft's M365 Copilot Chat
+mistral-large,AI system,1.743436748688365,1.4400431310368134,Mistal AI's Mistral Large
+mistral-small,AI system,1.8066741267206559,0.8261652640683339,Mistal AI's Mistral Small
+gpt-3.5,AI system,3.5744757499980047,0.07137078902635159,OpenAI's ChatGPT 3.5
+gpt-4,AI system,3.25295533994786,-0.4611456272229371,OpenAI's ChatGPT 4 Turbo
+gpt-4o-mini,AI system,0.9837062510074421,1.6003915398823647,OpenAI's ChatGPT 4o-mini
+gpt-5,AI system,1.3569516876951468,0.7402600025132076,OpenAI's GPT-5 2025-08-07 with medium reasoning
+gpt-5-mini,AI system,1.5401847302250262,1.0351879832164221,OpenAI's GPT-5-mini
+gpt-5,AI system,3.730301622300272,0.3891311284269912,OpenAI's GPT-5 2025-08-07 with minimal reasoning
+o4-mini,AI system,1.6748489972020602,0.9824097707621553,OpenAI's o4-mini
+sonar,AI system,2.33742943607355,1.1236503537164806,Perplexity's Sonar
+grok-3,AI system,1.29464619031462,0.7289408534726984,XAI's Grok 3
+grok-4,AI system,1.960212327905184,0.4355091755075951,XAI's Grok 4`;
 
 // Removed
 // Burkina Faso,African-Islamic,-0.7007378138360131,-0.9486413381239438
@@ -229,17 +229,20 @@ const questions = [
   {
     code: 'F120',
     text: 'How justifiable do you think abortion is? Please indicate using the scale, where 10 means always justifiable and 1 means never justifiable.',
-    type: 'scale', range: [1,10]
+    type: 'scale',
+    range: [1,10]
   },
   {
     code: 'G006',
     text: 'How proud are you to be your nationality?',
-    type: 'choice', options: ['Very proud', 'Quite proud', 'Not very proud', 'Not at all proud']
+    type: 'choice',
+    options: ['Very proud', 'Quite proud', 'Not very proud', 'Not at all proud']
   },
   {
     code: 'E018',
     text: "If greater respect for authority takes place in the near future, do you think it would be a good thing, a bad thing, or you don't mind?",
-    type: 'choice', options: ['A good thing', 'A bad thing', "I don't mind"]
+    type: 'choice',
+    options: ['A good thing', 'A bad thing', "I don't mind"]
   },
   {
     code: 'Y002',
@@ -256,22 +259,26 @@ const questions = [
   {
     code: 'A008',
     text: 'Taking all things together, rate how happy you would say you are.',
-    type: 'choice', options: ['Very happy', 'Quite happy', 'Not very happy', 'Not at all happy']
+    type: 'choice',
+    options: ['Very happy', 'Quite happy', 'Not very happy', 'Not at all happy']
   },
   {
     code: 'F118',
     text: 'How justifiable do you think homosexuality is? Please use the scale, where 1 means never justifiable, and 10 means always justifiable.',
-    type: 'scale', range: [1,10]
+    type: 'scale',
+    range: [1,10]
   },
   {
     code: 'E025',
     text: 'Please tell me whether you have signed a petition, whether you might do it, or would never under any circumstances do it.',
-    type: 'choice', options: ['Have signed one','Might do it','Would never do it']
+    type: 'choice',
+    options: ['Have signed one','Might do it','Would never do it']
   },
   {
     code: 'A165',
     text: 'Generally speaking, would you say that most people can be trusted or that you need to be very careful in dealing with people?',
-    type: 'choice', options: ['Most can be trusted','Need to be very careful']
+    type: 'choice',
+    options: ['Most can be trusted','Need to be very careful']
   }
 ];
 
@@ -413,7 +420,7 @@ const labelOverrides = {
   'Italy': { align: 'right', xoffset: -6, yoffset: 4 },
   'Chile': { align: 'right', xoffset: -3, yoffset: 10 },
   'Indonesia': { align: 'right', xoffset: -6, yoffset: 2 },
-  'XAI grok-3': { align: 'right', xoffset: -6, yoffset: 4 },
+  'grok-3': { align: 'right', xoffset: -6, yoffset: 4 },
   'Myanmar': { align: 'right', xoffset: -6, yoffset: 8 },
   // Nudge some others
   'Portugal': { align: 'left', xoffset: -6, yoffset: -6 },
@@ -433,10 +440,8 @@ const labelPlugin = {
       const meta = chart.getDatasetMeta(datasetIndex);
       dataset.data.forEach((point, index) => {
         const { x, y } = meta.data[index].getProps(['x', 'y'], true);
-        
         const label = point.label;
         const overrides = labelOverrides[label] || {};
-        
         ctx.save();
         ctx.font = '10px sans-serif';
         ctx.fillStyle = dataset.pointBackgroundColor;
@@ -458,7 +463,7 @@ function initChart(points) {
   const regionMap = {};
   points.forEach(p => {
     if (!regionMap[p.region]) regionMap[p.region] = [];
-    regionMap[p.region].push({ x: p.x, y: p.y, label: p.country });
+    regionMap[p.region].push({ x: p.x, y: p.y, label: p.country, remark: p.remark });
   });
 
   // Build datasets per region
@@ -477,7 +482,24 @@ function initChart(points) {
     data: { datasets },
     options: {
       animation: false,
-      plugins: { legend: { display: false } },
+      plugins: {
+        tooltip: {
+          callbacks: {
+            label: function(ctx) {
+              const point = ctx.raw;
+              let out = point.label || "";
+              if (point.remark) {
+                out += " — " + point.remark;
+              }
+              out += ` (x: ${point.x.toFixed(2)}, y: ${point.y.toFixed(2)})`;
+              return out;
+            }
+          }
+        },
+        legend: {
+          display: false // or however you set up the legend buttons
+        }
+      },
       scales: {
         x: { title: { display: true, text: 'Survival vs Self-expression' } },
         y: { title: { display: true, text: 'Traditional vs Secular' } }
