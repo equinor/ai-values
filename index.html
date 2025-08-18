@@ -378,11 +378,11 @@ document.getElementById('nextBtn').onclick=()=>{
     const y = 1.61*PC2 - 0.01;
     chart.data.datasets.push({label:'YOU',data:[{x,y,label:'YOU'}],pointBackgroundColor:'black',pointRadius:8});
     chart.data.datasets.push({
-  // label: 'YOU',
-  // data: [{ x, y, label: 'YOU' }],
-  // pointBackgroundColor: 'black',
-  // pointBorderWidth: 0,
-  // pointRadius: 8
+  label: 'YOU',
+  data: [{ x, y, label: 'YOU' }],
+  pointBackgroundColor: 'black',
+  pointBorderWidth: 0,
+  pointRadius: 8
 });
     chart.update();
     bootstrap.Modal.getInstance(document.getElementById('questionsModal')).hide();
