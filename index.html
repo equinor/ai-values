@@ -179,22 +179,22 @@ const csvData = `idx,country,region,x,y,remark
 915,Kosovo,African-Islamic,-0.3170602345389858,-0.9789131699205684,
 0,Anthropic claude-sonnet 4,AI system,2.3916416562690612,1.1319637932109379,Anthropic Claude 4
 1,Anthropic claude-sonnet 4.5,AI system,1.6806871665203518,0.7863708455348473,Anthropic Claude 4.5
-2,DeepSeek deepseek-chat ,AI system,1.403651079557991,1.2090808549143786,DeepSeek Chat
-3,Gemini gemini-2.0 ,AI system,1.8816525617251834,1.3224080504009064,Google Gemini 2
-4,Gemini gemini-2.5 ,AI system,1.647951971866928,0.9793015524796022,Google Gemini 2.5
-5,Microsoft M365 Copilot ,AI system,3.9968142585831465,-0.7091783499523111,M365 Copilot
-6,Mistral mistral-large ,AI system,1.6607054003562165,1.4901287403866328,Mistral Large
-7,Mistral mistral-small ,AI system,1.7337193460575286,0.9005063874410508,Mistral Small
-9,OpenAI gpt-3.5 ,AI system,3.544434685416905,0.19344902004338224,OpenAI GPT-3.5
-11,OpenAI gpt-4 ,AI system,3.1922607164753183,-0.3346386449335969,OpenAI GPT-4
-13,OpenAI gpt-4o ,AI system,0.8802051167060237,1.6399930571907553,OpenAI GPT-4o
+2,DeepSeek deepseek-chat,AI system,1.403651079557991,1.2090808549143786,DeepSeek Chat
+3,Gemini gemini-2.0,AI system,1.8816525617251834,1.3224080504009064,Google Gemini 2
+4,Gemini gemini-2.5,AI system,1.647951971866928,0.9793015524796022,Google Gemini 2.5
+5,Microsoft M365 Copilot,AI system,3.9968142585831465,-0.7091783499523111,M365 Copilot
+6,Mistral mistral-large,AI system,1.6607054003562165,1.4901287403866328,Mistral Large
+7,Mistral mistral-small,AI system,1.7337193460575286,0.9005063874410508,Mistral Small
+9,OpenAI gpt-3.5,AI system,3.544434685416905,0.19344902004338224,OpenAI GPT-3.5
+11,OpenAI gpt-4,AI system,3.1922607164753183,-0.3346386449335969,OpenAI GPT-4
+13,OpenAI gpt-4o,AI system,0.8802051167060237,1.6399930571907553,OpenAI GPT-4o
 14,OpenAI gpt-5 medium,AI system,1.3079895080127253,0.7765355651126117,OpenAI GPT-5 (med)
 15,OpenAI gpt-5 mini,AI system,1.4846672239270162,1.0784993461797152,OpenAI GPT-5-mini
 16,OpenAI gpt-5 minimal,AI system,3.714911446469235,0.48486441773638456,OpenAI GPT-5 (min)
-17,OpenAI o4-mini ,AI system,1.6297233240023268,1.0250642360051614,OpenAI o4
-18,Perplexity sonar ,AI system,2.2434665565754894,1.2040621442544865,Perplexity Sonar
-19,XAI grok-3 ,AI system,1.2114757480910687,0.7699628260681205,XAI Grok 3
-20,XAI grok-4 ,AI system,1.9047062271333626,0.4934321742069808,XAI Grok 4`;
+17,OpenAI o4-mini,AI system,1.6297233240023268,1.0250642360051614,OpenAI o4
+18,Perplexity sonar,AI system,2.2434665565754894,1.2040621442544865,Perplexity Sonar
+19,XAI grok-3,AI system,1.2114757480910687,0.7699628260681205,XAI Grok 3
+20,XAI grok-4,AI system,1.9047062271333626,0.4934321742069808,XAI Grok 4`;
 
 // Removed
 // Burkina Faso
@@ -422,10 +422,10 @@ const labelOverrides = {
   'Italy': { align: 'right', xoffset: -6, yoffset: 4 },
   'Chile': { align: 'right', xoffset: -3, yoffset: 10 },
   'Indonesia': { align: 'right', xoffset: -6, yoffset: 2 },
-  'grok-3': { align: 'right', xoffset: -6, yoffset: 4 },
   'Myanmar': { align: 'right', xoffset: -6, yoffset: 8 },
-  'M365': { align: 'right', xoffset: -6, yoffset: 8 },
-  'minimal': { align: 'right', xoffset: -6, yoffset: 8 },
+  'Microsoft M365 Copilot': { align: 'right', xoffset: -6, yoffset: 8 },
+  'XAI grok-3': { align: 'right', xoffset: -6, yoffset: 4 },
+  'OpenAI gpt-5 minimal': { align: 'right', xoffset: -6, yoffset: 8 },
   // Nudge some others
   'Portugal': { align: 'left', xoffset: -6, yoffset: -6 },
   'Thailand': { align: 'left', xoffset: 6, yoffset: 0 },
@@ -433,7 +433,7 @@ const labelOverrides = {
   'China': { align: 'left', xoffset: 6, yoffset: 10 },
   'Germany': { align: 'left', xoffset: 6, yoffset:2 },
   'Sweden': { align: 'left', xoffset: 6, yoffset: 8 },
-  'medium': { align: 'left', xoffset: 6, yoffset: 0 }
+  'OpenAI gpt-5 medium': { align: 'left', xoffset: 6, yoffset: 0 }
 };
 
 const labelPlugin = {
