@@ -52,18 +52,3 @@ Some attempts at benchmarks:
 
 - [eval-polical-worldviews](https://github.com/tceron/eval_political_worldviews)
 - [WorldValuesBench](https://aclanthology.org/2024.lrec-main.1539.pdf)
-
-
-## Other AI-related repositories
-
-We maintain a few other repos containing learning material related to machine learning and artificial intelligence.
-
-- [`promptly`](https://github.com/equinor/promptly) for more on prompting and pitfalls in generative AI.
-- [`llm-engineering-101`](https://github.com/equinor/llm-engineering-101) for a short workshop aimed at getting developers up to speed.
-- [`ml-pitfalls`](https://github.com/equinor/ml-pitfalls) for more on pitfalls in discriminative machine learning, another series of events.
-- [`ai-upskill`](https://github.com/equinor/ai-upskill) for a repo describing Equinor's company upskill events and materials.
-- [`label-ai`](https://github.com/equinor/label-ai) for a small web app exploring obvious and non-obvious ways of labeling generated content.
-
----
-
-&copy; 2025 Matt Hall, Equinor | Licensed CC BY, please share this work.
